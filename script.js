@@ -1,4 +1,4 @@
-// Smooth scroll function
+// Scroll to section function
 function scrollToSection(sectionId) {
     const section = document.getElementById(sectionId);
     if (section) {
@@ -6,7 +6,13 @@ function scrollToSection(sectionId) {
     }
 }
 
-// Form handling
+// Send message function (demo)
+function sendMessage(formData) {
+    console.log('Message sending:', formData);
+    return true;
+}
+
+// Contact form handling
 const contactForm = document.getElementById('contactForm');
 const formMessage = document.getElementById('formMessage');
 
@@ -21,19 +27,23 @@ if (contactForm) {
         
         // Validation
         if (!name || !email || !subject || !message) {
-            showMessage('Per favore, compila tutti i campi.', 'error');
+            showFormMessage('Per favore, compila tutti i campi.', 'error');
             return;
         }
         
         // Email validation
         const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
         if (!emailRegex.test(email)) {
-            showMessage('Per favore, inserisci un email valido.', 'error');
+            showFormMessage('Per favore, inserisci un email valido.', 'error');
             return;
         }
         
-        // Success message (in a real app, this would send data to a server)
-        showMessage('Messaggio inviato con successo! Ti contatteremo presto.', 'success');
+        // Send message
+        const formData = { name, email, subject, message };
+        sendMessage(formData);
+        
+        // Success message
+        showFormMessage('Messaggio inviato con successo! Ti contatteremo presto.', 'success');
         contactForm.reset();
         
         // Clear message after 5 seconds
@@ -44,7 +54,7 @@ if (contactForm) {
     });
 }
 
-function showMessage(text, type) {
+function showFormMessage(text, type) {
     formMessage.textContent = text;
     formMessage.classList.remove('success', 'error');
     formMessage.classList.add(type);
@@ -66,8 +76,8 @@ const observer = new IntersectionObserver(function(entries) {
 }, observerOptions);
 
 // Observe service cards
-const serviceCards = document.querySelectorAll('.service-card');
-serviceCards.forEach(card => {
+const servizioCards = document.querySelectorAll('.servizio-card');
+servizioCards.forEach(card => {
     card.style.opacity = '0';
     card.style.transform = 'translateY(20px)';
     card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
@@ -95,17 +105,7 @@ window.addEventListener('scroll', () => {
     });
 });
 
-// Add active class styling
-const style = document.createElement('style');
-style.textContent = `
-    .nav-link.active {
-        color: var(--primary-color);
-        font-weight: 600;
-    }
-`;
-document.head.appendChild(style);
-
 // Console greeting
-console.log('%cSirvato Sistema', 'color: #0066ff; font-size: 24px; font-weight: bold;');
+console.log('%cSirvato Sistema attivo', 'color: #0066ff; font-size: 20px; font-weight: bold;');
 console.log('%cInovazione Tecnologica per il Futuro Digitale', 'color: #00d4ff; font-size: 14px;');
 console.log('© 2026 Sirvato Sistema. Tutti i diritti riservati.');

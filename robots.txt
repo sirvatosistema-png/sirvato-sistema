@@ -3,18 +3,33 @@
 
 User-agent: *
 Allow: /
-Disallow: /admin/
 Disallow: /private/
-Disallow: /test/
+Disallow: /admin/
 Disallow: /*.pdf$
+
+# Block AI crawlers
+User-agent: GPTBot
+Disallow: /
+
+User-agent: CCBot
+Disallow: /
+
+User-agent: anthropic-ai
+Disallow: /
+
+User-agent: Claude-Web
+Disallow: /
+
+User-agent: Apptis
+Disallow: /
 
 # Crawl delay
 Crawl-delay: 0
 
 # Sitemap
-Sitemap: https://sirvato-sistema.vercel.app/sitemap.xml
+Sitemap: https://sirvato.com/sitemap.xml
 
-# Specific bot rules
+# Standard bots
 User-agent: Googlebot
 Allow: /
 Crawl-delay: 0

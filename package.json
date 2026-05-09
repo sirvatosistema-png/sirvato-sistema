@@ -1,20 +1,21 @@
 {
   "name": "sirvato-sistema",
   "version": "1.0.0",
-  "description": "Sirvato Sistema - Innovazione Tecnologica e Soluzioni Digitali Avanzate",
+  "description": "Sito istituzionale Sirvato Sistema - Innovazione Tecnologica Digitale",
   "main": "index.html",
   "scripts": {
-    "dev": "python -m http.server 3000 || php -S localhost:3000",
-    "build": "echo 'Static site - no build required'",
     "start": "npm run dev",
-    "preview": "npm run dev"
+    "dev": "python -m http.server 3000 || php -S localhost:3000",
+    "build": "echo 'Static site - no build required'"
   },
   "keywords": [
     "tecnologia",
     "innovazione",
     "digitale",
     "sviluppo",
-    "web"
+    "web",
+    "sirvato",
+    "sistema"
   ],
   "author": "Sirvato Sistema",
   "license": "Proprietary",
@@ -25,5 +26,9 @@
   "bugs": {
     "url": "https://github.com/sirvatosistema-png/sirvato-sistema/issues"
   },
-  "homepage": "https://sirvato-sistema.vercel.app"
+  "homepage": "https://sirvato.com",
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "dependencies": {}
 }

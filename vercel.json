@@ -1,13 +1,25 @@
 {
-  "name": "Sirvato Sistema",
-  "version": "1.0.0",
-  "buildCommand": "",
-  "outputDirectory": ".",
-  "framework": "other",
+  "version": 2,
+  "builds": [
+    {
+      "src": "index.html",
+      "use": "@vercel/static"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "/index.html"
+    }
+  ],
   "headers": [
     {
       "source": "/(.*)",
       "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=3600, s-maxage=3600"
+        },
         {
           "key": "X-Content-Type-Options",
           "value": "nosniff"
@@ -19,19 +31,8 @@
         {
           "key": "X-XSS-Protection",
           "value": "1; mode=block"
-        },
-        {
-          "key": "Referrer-Policy",
-          "value": "strict-origin-when-cross-origin"
-        },
-        {
-          "key": "Permissions-Policy",
-          "value": "camera=(), microphone=(), geolocation=()"
         }
       ]
     }
-  ],
-  "env": {
-    "NEXT_PUBLIC_SITE_URL": "https://sirvato-sistema.vercel.app"
-  }
+  ]
 }

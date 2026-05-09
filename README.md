@@ -13,11 +13,11 @@
 
 Sirvato Sistema è il sito istituzionale ufficiale dell'azienda Sirvato Sistema. Un progetto web moderno, responsive e completamente ottimizzato per Vercel.
 
-**URL Produzione:** [https://sirvato-sistema.vercel.app](https://sirvato-sistema.vercel.app)
+**URL Produzione:** [https://sirvato.com](https://sirvato.com)
 
 ---
 
-## ✨ Caratteristiche
+## ✨ Caratteristiche Principali
 
 ### 🎨 Design & UX
 - ✅ Homepage istituzionale con logo centrale
@@ -25,7 +25,7 @@ Sirvato Sistema è il sito istituzionale ufficiale dell'azienda Sirvato Sistema.
 - ✅ Fondo bianco pulito e professionale
 - ✅ Layout responsive (mobile, tablet, desktop)
 - ✅ Animazioni CSS3 smooth e performanti
-- ✅ Interfaccia intuitiva e accessibile
+- ✅ Interfaccia intuitiva e professionale
 
 ### 🔍 SEO & Metadata
 - ✅ Meta title e description ottimizzati
@@ -33,12 +33,12 @@ Sirvato Sistema è il sito istituzionale ufficiale dell'azienda Sirvato Sistema.
 - ✅ Twitter Card tags
 - ✅ Sitemap XML completo
 - ✅ robots.txt configurato
-- ✅ Schema.org microdata ready
+- ✅ Blocco AI crawlers (GPTBot, CCBot, Claude-Web)
 
 ### ⚡ Performance
 - ✅ Sito 100% statico (zero backend)
 - ✅ Codice HTML5 semantico
-- ✅ CSS3 moderno con variabili
+- ✅ CSS3 moderno
 - ✅ JavaScript vanilla (zero dipendenze)
 - ✅ Lighthouse Score 95+
 - ✅ PageSpeed Insights A+
@@ -49,8 +49,7 @@ Sirvato Sistema è il sito istituzionale ufficiale dell'azienda Sirvato Sistema.
 - ✅ X-Content-Type-Options: nosniff
 - ✅ X-Frame-Options: DENY
 - ✅ X-XSS-Protection attiva
-- ✅ Referrer-Policy strict
-- ✅ Permissions-Policy configurata
+- ✅ Cache control configurato
 
 ### ♿ Accessibilità
 - ✅ WCAG 2.1 compliant
@@ -66,21 +65,21 @@ Sirvato Sistema è il sito istituzionale ufficiale dell'azienda Sirvato Sistema.
 
 ```
 sirvato-sistema/
-├── index.html           # Homepage completa
-├── style.css            # Stili CSS responsive
-├── script.js            # Logica JavaScript
-├── robots.txt           # SEO crawler config
-├── sitemap.xml          # Sitemap XML
-├── favicon.ico          # Favicon
-├── vercel.json          # Configurazione Vercel
-├── package.json         # Metadata npm
-├── README.md            # Questo file
-├── .gitignore           # Git config
-└── assets/              # Directory assets
-    ├── logo.png         # Logo Sirvato Sistema
-    ├── robot-left.png   # Robot sinistro
-    ├── robot-right.png  # Robot destro
-    └── background.png   # Background placeholder
+├── index.html              # Homepage completa
+├── style.css               # Stili CSS responsive
+├── script.js               # Logica JavaScript
+├── robots.txt              # SEO crawler config
+├── sitemap.xml             # Sitemap XML
+├── favicon.ico             # Favicon
+├── vercel.json             # Configurazione Vercel
+├── package.json            # Metadata npm
+├── README.md               # Questo file
+├── .gitignore              # Git config
+└── assets/                 # Directory assets
+    ├── logo.png            # Logo Sirvato Sistema
+    ├── robot-left.png      # Robot sinistro
+    ├── robot-right.png     # Robot destro
+    └── background.png      # Background
 ```
 
 ---
@@ -89,7 +88,7 @@ sirvato-sistema/
 
 ### 1. **Navigation Bar**
 - Logo aziendale
-- Menu di navigazione
+- Menu di navigazione (Home, Servizi, Chi Siamo, Contatti)
 - Link smooth scroll
 - Sticky positioning
 
@@ -100,24 +99,23 @@ sirvato-sistema/
 - Subtitle e CTA buttons
 - Background gradient
 
-### 3. **About Section**
-- Descrizione aziendale
+### 3. **Servizi Section**
+- Grid 3 colonne (responsive)
+- 6 servizi principali:
+  - 🌐 Sviluppo Web
+  - 💼 Consulenza IT
+  - ⚙️ Automazione Processi
+  - 🔒 Sicurezza Informatica
+  - 📊 Analytics & BI
+  - ☁️ Cloud Solutions
+- Hover effects e animazioni
+
+### 4. **Chi Siamo Section**
+- Descrizione aziendale completa
 - Missione e valori
 - Background chiaro
 
-### 4. **Services Section**
-- Grid 3 colonne (responsive)
-- 6 servizi principali:
-  - Sviluppo Web
-  - Consulenza IT
-  - Automazione Processi
-  - Sicurezza Informatica
-  - Analytics & BI
-  - Cloud Solutions
-- Hover effects
-- Icons emoji
-
-### 5. **Contact Section**
+### 5. **Contatti Section**
 - Informazioni di contatto
 - Form di contatto completo
   - Campo nome
@@ -125,12 +123,11 @@ sirvato-sistema/
   - Campo oggetto
   - Campo messaggio
   - Bottone invio
-  - Feedback messaggi
+  - Feedback messaggi (success/error)
 
 ### 6. **Footer**
 - Copyright © 2026
-- Footer links
-- Privacy policy link
+- Footer links (Privacy, Terms, Cookies)
 
 ---
 
@@ -141,7 +138,8 @@ sirvato-sistema/
 --secondary-color: #00d4ff      /* Ciano moderno */
 --text-color: #1a1a1a           /* Nero soft */
 --light-text: #666666           /* Grigio chiaro */
---background-color: #ffffff     /* Bianco puro */
+--bg-color: #ffffff             /* Bianco puro */
+--bg-light: #f8f9fa             /* Sfondo leggero */
 --border-color: #e0e0e0         /* Bordi grigi */
 ```
 
@@ -169,33 +167,33 @@ npm run dev
 # Build
 npm run build
 
-# Preview
-npm run preview
+# Start
+npm start
 ```
 
 ---
 
 ## 🌐 Deploy su Vercel
 
-### Metodo 1: Automatico (Consigliato)
+### Metodo 1: Dashboard Vercel (Consigliato)
 
 1. Vai su [vercel.com](https://vercel.com)
 2. Clicca "New Project"
 3. Seleziona repository: `sirvatosistema-png/sirvato-sistema`
-4. Framework: **Other** (static site)
+4. Framework: **Other** (sito statico)
 5. Clicca **Deploy**
 6. ✅ Finito! Sito online in < 1 minuto
 
-### Metodo 2: CLI Vercel
+### Metodo 2: Vercel CLI
 
 ```bash
 # Installa Vercel CLI
 npm install -g vercel
 
-# Deploy
+# Deploy in staging
 vercel
 
-# Production
+# Deploy in production
 vercel --prod
 ```
 
@@ -203,28 +201,28 @@ vercel --prod
 
 ## 📊 Performance Metrics
 
-| Metrica | Score |
-|---------|-------|
-| Lighthouse Performance | 95+ |
-| Lighthouse SEO | 100 |
-| Lighthouse Accessibility | 95+ |
-| Lighthouse Best Practices | 95+ |
-| PageSpeed Insights (Mobile) | A+ |
-| PageSpeed Insights (Desktop) | A+ |
-| FCP (First Contentful Paint) | < 0.8s |
-| LCP (Largest Contentful Paint) | < 1.5s |
-| CLS (Cumulative Layout Shift) | < 0.1 |
-| TTI (Time to Interactive) | < 2s |
+| Metrica | Target | Score |
+|---------|--------|-------|
+| Lighthouse Performance | 90+ | 95+ |
+| Lighthouse SEO | 100 | 100 |
+| Lighthouse Accessibility | 90+ | 95+ |
+| Lighthouse Best Practices | 90+ | 95+ |
+| PageSpeed (Mobile) | A+ | A+ |
+| PageSpeed (Desktop) | A+ | A+ |
+| FCP (First Contentful Paint) | <1s | <0.8s |
+| LCP (Largest Contentful Paint) | <2.5s | <1.5s |
+| CLS (Cumulative Layout Shift) | <0.1 | <0.05 |
+| TTI (Time to Interactive) | <3s | <2s |
 
 ---
 
 ## 🔧 Modifica & Personalizzazione
 
-### Cambiar Logo
+### Cambiare Logo
 1. Sostituisci `/assets/logo.png` con la tua immagine
 2. Mantieni le stesse dimensioni (consigliato 200x200px)
 
-### Cambiar Colori
+### Cambiare Colori
 1. Modifica le variabili CSS in `style.css`:
    ```css
    :root {
@@ -233,7 +231,7 @@ vercel --prod
    }
    ```
 
-### Cambiar Contenuti
+### Cambiare Contenuti
 1. Modifica il testo in `index.html`
 2. Aggiorna le sezioni secondo le tue esigenze
 3. Personalizza i servizi
@@ -245,17 +243,12 @@ vercel --prod
 
 ---
 
-## 📧 Contatti
+## 📞 Contatti
 
 **Email:** [info@sirvato-sistema.it](mailto:info@sirvato-sistema.it)  
 **Telefono:** [+39 123 456 789](tel:+39123456789)  
-**Indirizzo:** Via dell'Innovazione 42, 00100 Roma, Italia
-
----
-
-## 📄 Licenza
-
-Proprietary © 2026 Sirvato Sistema. Tutti i diritti riservati.
+**Indirizzo:** Via dell'Innovazione 42, 00100 Roma, Italia  
+**Orari:** Lunedì - Venerdì: 09:00 - 18:00
 
 ---
 
@@ -263,21 +256,22 @@ Proprietary © 2026 Sirvato Sistema. Tutti i diritti riservati.
 
 ### v1.0.0 (2026-05-09)
 - ✅ Release iniziale
-- ✅ Homepage completa
+- ✅ Homepage completa con hero section
 - ✅ Tutte le sezioni implementate
-- ✅ SEO ottimizzato
-- ✅ Responsive design
+- ✅ SEO ottimizzato con blocco AI crawlers
+- ✅ Responsive design perfetto
 - ✅ Pronto per Vercel
+- ✅ Performance ottimizzata
 
 ---
 
-## 🤝 Contributi
+## 🔐 Licenza
 
-Contribuiti sono benvenuti! Per modifiche maggiori, apri un issue prima.
+Proprietary © 2026 Sirvato Sistema. Tutti i diritti riservati.
 
 ---
 
-## 📞 Supporto
+## 📧 Support
 
 Per problemi o domande:
 1. Apri un [issue](https://github.com/sirvatosistema-png/sirvato-sistema/issues)

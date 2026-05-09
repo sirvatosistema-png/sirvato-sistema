@@ -3,79 +3,119 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Sirvato Sistema - Innovazione Tecnologica e Soluzioni Digitali Avanzate per Imprese e Organizzazioni Moderne">
-    <meta name="keywords" content="tecnologia, innovazione, sistemi digitali, sviluppo web, consulenza IT">
+    <meta name="description" content="Sirvato Sistema - Innovazione Tecnologica e Soluzioni Digitali Avanzate per Imprese Moderne">
+    <meta name="keywords" content="tecnologia, innovazione, sistemi digitali, sviluppo web, consulenza IT, automazione">
     <meta name="author" content="Sirvato Sistema">
     <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#0066ff">
     
-    <!-- Open Graph Tags -->
+    <!-- Open Graph Meta Tags -->
     <meta property="og:title" content="Sirvato Sistema - Innovazione Digitale">
-    <meta property="og:description" content="Soluzioni tecnologiche innovative per trasformare il tuo business">
+    <meta property="og:description" content="Soluzioni tecnologiche innovative per trasformare il tuo business digitale">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://sirvato-sistema.vercel.app">
-    <meta property="og:image" content="https://sirvato-sistema.vercel.app/assets/logo.png">
+    <meta property="og:url" content="https://sirvato.com">
+    <meta property="og:image" content="https://sirvato.com/assets/logo.png">
     <meta property="og:locale" content="it_IT">
+    <meta property="og:site_name" content="Sirvato Sistema">
     
-    <!-- Twitter Card -->
+    <!-- Twitter Card Meta Tags -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Sirvato Sistema">
     <meta name="twitter:description" content="Innovazione Tecnologica Avanzata">
-    <meta name="twitter:image" content="https://sirvato-sistema.vercel.app/assets/logo.png">
+    <meta name="twitter:image" content="https://sirvato.com/assets/logo.png">
     
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="favicon.ico">
     <link rel="apple-touch-icon" href="favicon.ico">
+    <link rel="shortcut icon" href="favicon.ico">
     
-    <!-- Stylesheet -->
+    <!-- Stylesheets -->
     <link rel="stylesheet" href="style.css">
     
-    <title>Sirvato Sistema - Innovazione e Tecnologia Digitale</title>
+    <title>Sirvato Sistema - Innovazione Tecnologica Digitale</title>
 </head>
 <body>
-    <!-- Navigation -->
+    <!-- Navigation Bar -->
     <nav class="navbar">
         <div class="nav-container">
             <div class="nav-logo">
-                <img src="assets/logo.png" alt="Logo Sirvato Sistema" class="logo-img">
+                <img src="assets/logo.png" alt="Sirvato Sistema Logo" class="logo-icon">
                 <span class="logo-text">Sirvato Sistema</span>
             </div>
             <ul class="nav-menu">
-                <li><a href="#home" class="nav-link">Home</a></li>
-                <li><a href="#about" class="nav-link">Chi Siamo</a></li>
-                <li><a href="#services" class="nav-link">Servizi</a></li>
-                <li><a href="#contact" class="nav-link">Contatti</a></li>
+                <li><a href="#home" class="nav-link" onclick="scrollToSection('home')">Home</a></li>
+                <li><a href="#servizi" class="nav-link" onclick="scrollToSection('servizi')">Servizi</a></li>
+                <li><a href="#chi-siamo" class="nav-link" onclick="scrollToSection('chi-siamo')">Chi Siamo</a></li>
+                <li><a href="#contatti" class="nav-link" onclick="scrollToSection('contatti')">Contatti</a></li>
             </ul>
         </div>
     </nav>
 
     <!-- Hero Section -->
     <section id="home" class="hero">
-        <!-- Robot Left -->
         <div class="robot robot-left">
             <img src="assets/robot-left.png" alt="Robot Sinistro" class="robot-image">
         </div>
-
-        <!-- Central Content -->
+        
         <div class="hero-content">
+            <div class="logo-container">
+                <img src="assets/logo.png" alt="Sirvato Sistema" class="hero-logo">
+            </div>
             <h1 class="hero-title">Sirvato Sistema</h1>
             <p class="hero-subtitle">Innovazione Tecnologica per il Futuro Digitale</p>
-            <div class="hero-description">
-                <p>Trasformiamo la tua visione in realtà digitale con soluzioni tecnologiche innovative, scalabili e affidabili.</p>
-            </div>
+            <p class="hero-description">Trasformiamo la tua visione in realtà digitale con soluzioni tecnologiche innovative, scalabili e affidabili.</p>
             <div class="cta-buttons">
-                <button class="btn btn-primary" onclick="scrollToSection('services')">Scopri i Nostri Servizi</button>
-                <button class="btn btn-secondary" onclick="scrollToSection('contact')">Contattaci Oggi</button>
+                <button class="btn btn-primary" onclick="scrollToSection('servizi')">Scopri i Nostri Servizi</button>
+                <button class="btn btn-secondary" onclick="scrollToSection('contatti')">Contattaci Oggi</button>
             </div>
         </div>
-
-        <!-- Robot Right -->
+        
         <div class="robot robot-right">
             <img src="assets/robot-right.png" alt="Robot Destro" class="robot-image">
         </div>
     </section>
 
-    <!-- About Section -->
-    <section id="about" class="about">
+    <!-- Servizi Section -->
+    <section id="servizi" class="servizi">
+        <div class="container">
+            <h2 class="section-title">I Nostri Servizi</h2>
+            <div class="servizi-grid">
+                <div class="servizio-card">
+                    <div class="servizio-icon">🌐</div>
+                    <h3 class="servizio-title">Sviluppo Web</h3>
+                    <p class="servizio-description">Soluzioni web moderne, responsive e performanti. Dai siti istituzionali alle applicazioni web complesse.</p>
+                </div>
+                <div class="servizio-card">
+                    <div class="servizio-icon">💼</div>
+                    <h3 class="servizio-title">Consulenza IT</h3>
+                    <p class="servizio-description">Strategie digitali personalizzate per la trasformazione del tuo business. Analisi, pianificazione e implementazione.</p>
+                </div>
+                <div class="servizio-card">
+                    <div class="servizio-icon">⚙️</div>
+                    <h3 class="servizio-title">Automazione Processi</h3>
+                    <p class="servizio-description">Automatizza i tuoi processi aziendali per aumentare l'efficienza e ridurre i costi. Workflow intelligenti.</p>
+                </div>
+                <div class="servizio-card">
+                    <div class="servizio-icon">🔒</div>
+                    <h3 class="servizio-title">Sicurezza Informatica</h3>
+                    <p class="servizio-description">Protezione avanzata dei tuoi dati e della tua infrastruttura. Soluzioni di cybersecurity integrate.</p>
+                </div>
+                <div class="servizio-card">
+                    <div class="servizio-icon">📊</div>
+                    <h3 class="servizio-title">Analytics & BI</h3>
+                    <p class="servizio-description">Trasforma i dati in decisioni intelligenti. Business Intelligence e data analytics per insights in tempo reale.</p>
+                </div>
+                <div class="servizio-card">
+                    <div class="servizio-icon">☁️</div>
+                    <h3 class="servizio-title">Cloud Solutions</h3>
+                    <p class="servizio-description">Migrazione e gestione cloud per scalabilità e affidabilità. Infrastrutture moderne e disaster recovery.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Chi Siamo Section -->
+    <section id="chi-siamo" class="chi-siamo">
         <div class="container">
             <h2 class="section-title">Chi Siamo</h2>
             <div class="about-content">
@@ -90,74 +130,18 @@
                 </p>
                 <p>
                     Crediamo nella qualità, nell'innovazione continua e nella partnership a lungo termine con i 
-                    nostri clienti.
+                    nostri clienti. Il nostro team è composto da esperti altamente qualificati nel campo della 
+                    tecnologia, con una passione per l'eccellenza e l'innovazione.
                 </p>
             </div>
         </div>
     </section>
 
-    <!-- Services Section -->
-    <section id="services" class="services">
-        <div class="container">
-            <h2 class="section-title">I Nostri Servizi</h2>
-            <div class="services-grid">
-                <div class="service-card">
-                    <div class="service-icon">🌐</div>
-                    <h3 class="service-title">Sviluppo Web</h3>
-                    <p class="service-description">
-                        Soluzioni web moderne, responsive e performanti. Dai siti istituzionali alle 
-                        applicazioni web complesse, realizziamo progetti che superano le aspettative.
-                    </p>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">💼</div>
-                    <h3 class="service-title">Consulenza IT</h3>
-                    <p class="service-description">
-                        Strategie digitali personalizzate per la trasformazione del tuo business. 
-                        Analisi, pianificazione e implementazione di soluzioni tecnologiche su misura.
-                    </p>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">⚙️</div>
-                    <h3 class="service-title">Automazione Processi</h3>
-                    <p class="service-description">
-                        Automatizza i tuoi processi aziendali per aumentare l'efficienza e ridurre i costi. 
-                        Workflow intelligenti e integrazione di sistemi.
-                    </p>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">🔒</div>
-                    <h3 class="service-title">Sicurezza Informatica</h3>
-                    <p class="service-description">
-                        Protezione avanzata dei tuoi dati e della tua infrastruttura. 
-                        Soluzioni di cybersecurity integrate e compliance normativo.
-                    </p>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">📊</div>
-                    <h3 class="service-title">Analytics & BI</h3>
-                    <p class="service-description">
-                        Trasforma i dati in decisioni intelligenti. Business Intelligence e data analytics 
-                        per insights in tempo reale.
-                    </p>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">☁️</div>
-                    <h3 class="service-title">Cloud Solutions</h3>
-                    <p class="service-description">
-                        Migrazione e gestione cloud per scalabilità e affidabilità. 
-                        Infrastrutture moderne e disaster recovery.
-                    </p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="contact">
+    <!-- Contatti Section -->
+    <section id="contatti" class="contatti">
         <div class="container">
             <h2 class="section-title">Contattaci</h2>
-            <div class="contact-content">
+            <div class="contact-wrapper">
                 <div class="contact-info">
                     <h3>Informazioni di Contatto</h3>
                     <p><strong>Email:</strong> <a href="mailto:info@sirvato-sistema.it">info@sirvato-sistema.it</a></p>
@@ -191,7 +175,7 @@
 
     <!-- Footer -->
     <footer class="footer">
-        <div class="footer-content">
+        <div class="footer-container">
             <p>&copy; 2026 <strong>Sirvato Sistema</strong>. Tutti i diritti riservati.</p>
             <div class="footer-links">
                 <a href="#">Privacy Policy</a> | 
@@ -201,7 +185,7 @@
         </div>
     </footer>
 
-    <!-- Script -->
+    <!-- Scripts -->
     <script src="script.js"></script>
 </body>
 </html>

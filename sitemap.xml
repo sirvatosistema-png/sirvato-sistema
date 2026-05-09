@@ -1,25 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
-        <loc>https://sirvato-sistema.vercel.app/</loc>
+        <loc>https://sirvato.com/</loc>
         <lastmod>2026-05-09</lastmod>
         <changefreq>weekly</changefreq>
         <priority>1.0</priority>
     </url>
     <url>
-        <loc>https://sirvato-sistema.vercel.app/#about</loc>
+        <loc>https://sirvato.com/#servizi</loc>
         <lastmod>2026-05-09</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://sirvato-sistema.vercel.app/#services</loc>
+        <loc>https://sirvato.com/#chi-siamo</loc>
         <lastmod>2026-05-09</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://sirvato-sistema.vercel.app/#contact</loc>
+        <loc>https://sirvato.com/#contatti</loc>
         <lastmod>2026-05-09</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
