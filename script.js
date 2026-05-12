@@ -1,111 +1,95 @@
-// Scroll to section function
-function scrollToSection(sectionId) {
-    const section = document.getElementById(sectionId);
-    if (section) {
-        section.scrollIntoView({ behavior: 'smooth' });
+document.addEventListener('DOMContentLoaded', function() {
+    initializeAnimations();
+    setupInteractivity();
+});
+
+function initializeAnimations() {
+    console.log('Sirvato Sistema - Animazioni inizializzate');
+    observeElements();
+}
+
+function observeElements() {
+    const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver(function(entries) {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+            }
+        });
+    }, observerOptions);
+
+    document.querySelectorAll('.robot, .logo-section').forEach(el => {
+        observer.observe(el);
+    });
+}
+
+function setupInteractivity() {
+    const robots = document.querySelectorAll('.robot');
+    
+    robots.forEach(robot => {
+        robot.addEventListener('mouseenter', function() {
+            this.style.transform = 'scale(1.1)';
+        });
+        
+        robot.addEventListener('mouseleave', function() {
+            this.style.transform = 'scale(1)';
+        });
+
+        robot.addEventListener('click', function() {
+            this.style.animation = 'none';
+            setTimeout(() => {
+                this.style.animation = '';
+            }, 100);
+        });
+    });
+
+    const logo = document.querySelector('.logo');
+    if (logo) {
+        logo.addEventListener('click', function() {
+            this.style.animationDuration = '5s';
+            setTimeout(() => {
+                this.style.animationDuration = '20s';
+            }, 5000);
+        });
+    }
+
+    addSmoothTransitions();
+}
+
+function addSmoothTransitions() {
+    const style = document.createElement('style');
+    style.textContent = `
+        .robot, .logo {
+            transition: transform 0.3s ease;
+        }
+    `;
+    document.head.appendChild(style);
+}
+
+function debounce(func, wait) {
+    let timeout;
+    return function executedFunction(...args) {
+        const later = () => {
+            clearTimeout(timeout);
+            func(...args);
+        };
+        clearTimeout(timeout);
+        timeout = setTimeout(later, wait);
+    };
+}
+
+window.addEventListener('resize', debounce(function() {
+    console.log('Layout adattato al nuovo viewport');
+}, 250));
+
+function trackPageView() {
+    if (typeof window !== 'undefined') {
+        console.log('Sirvato Sistema - Sito caricato');
     }
 }
 
-// Send message function (demo)
-function sendMessage(formData) {
-    console.log('Message sending:', formData);
-    return true;
-}
-
-// Contact form handling
-const contactForm = document.getElementById('contactForm');
-const formMessage = document.getElementById('formMessage');
-
-if (contactForm) {
-    contactForm.addEventListener('submit', function(e) {
-        e.preventDefault();
-        
-        const name = document.getElementById('name').value.trim();
-        const email = document.getElementById('email').value.trim();
-        const subject = document.getElementById('subject').value.trim();
-        const message = document.getElementById('message').value.trim();
-        
-        // Validation
-        if (!name || !email || !subject || !message) {
-            showFormMessage('Per favore, compila tutti i campi.', 'error');
-            return;
-        }
-        
-        // Email validation
-        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        if (!emailRegex.test(email)) {
-            showFormMessage('Per favore, inserisci un email valido.', 'error');
-            return;
-        }
-        
-        // Send message
-        const formData = { name, email, subject, message };
-        sendMessage(formData);
-        
-        // Success message
-        showFormMessage('Messaggio inviato con successo! Ti contatteremo presto.', 'success');
-        contactForm.reset();
-        
-        // Clear message after 5 seconds
-        setTimeout(() => {
-            formMessage.classList.remove('success', 'error');
-            formMessage.textContent = '';
-        }, 5000);
-    });
-}
-
-function showFormMessage(text, type) {
-    formMessage.textContent = text;
-    formMessage.classList.remove('success', 'error');
-    formMessage.classList.add(type);
-}
-
-// Intersection Observer for animations
-const observerOptions = {
-    threshold: 0.1,
-    rootMargin: '0px 0px -50px 0px'
-};
-
-const observer = new IntersectionObserver(function(entries) {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.style.opacity = '1';
-            entry.target.style.transform = 'translateY(0)';
-        }
-    });
-}, observerOptions);
-
-// Observe service cards
-const servizioCards = document.querySelectorAll('.servizio-card');
-servizioCards.forEach(card => {
-    card.style.opacity = '0';
-    card.style.transform = 'translateY(20px)';
-    card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-    observer.observe(card);
-});
-
-// Active nav link on scroll
-const navLinks = document.querySelectorAll('.nav-link');
-const sections = document.querySelectorAll('section');
-
-window.addEventListener('scroll', () => {
-    let current = '';
-    sections.forEach(section => {
-        const sectionTop = section.offsetTop;
-        if (pageYOffset >= sectionTop - 200) {
-            current = section.getAttribute('id');
-        }
-    });
-    
-    navLinks.forEach(link => {
-        link.classList.remove('active');
-        if (link.getAttribute('href') === `#${current}`) {
-            link.classList.add('active');
-        }
-    });
-});
-
-// Console greeting
-console.log('%cSirvato Sistema attivo', 'color: #0066ff; font-size: 20px; font-weight: bold;');
-console.log('%cInovazione Tecnologica per il Futuro Digitale', 'color: #00d4ff; font-size: 14px;');
-console.log('© 2026 Sirvato Sistema. Tutti i diritti riservati.');
+trackPageView();
